@@ -1,0 +1,29 @@
+$media-mobile: '(min-width: 480px)';
+$media-tablet: '(min-width: 769px)';
+$media-desktop: '(min-width: 1024px)';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 14px;
+
+  @media #{$media-tablet} {
+    font-size: 16px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+  min-width: 320px;
+}
+
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}

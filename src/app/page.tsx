@@ -48,55 +48,58 @@ const Dashboard = () => {
   }, [filters.page, filters.limit])
 
   return (
-    <main>
-      <Link href='/login'>
-        Login
-      </Link>
-      <Link href='/register'>
-        Register
-      </Link>
+    <>
 
-      <label>Limit</label>
-      <select onChange={(e) => {
-        setFilters({
-          ...filters,
-          page: 1,
-          limit: Number(e.target.value)
-        })
-      }}>
-        <option value='1'>1</option>
-        <option value='2'>2</option>
-        <option value='4'>4</option>
-      </select>
+      <main>
+        <Link href='/login'>
+          Login
+        </Link>
+        <Link href='/register'>
+          Register
+        </Link>
 
-      <label>Page</label>
-      {Array.from({ length: filters.totalPages }, (_, index) => (
-        <button
-          key={index}
-          onClick={() => {
-            setFilters({
-              ...filters,
-              page: index + 1
-            })
-          }}
-          style={{ background: filters.page === index + 1 ? 'red' : 'transparent' }}
-        >{index + 1}</button>
-      ))}
+        <label>Limit</label>
+        <select onChange={(e) => {
+          setFilters({
+            ...filters,
+            page: 1,
+            limit: Number(e.target.value)
+          })
+        }}>
+          <option value='1'>1</option>
+          <option value='2'>2</option>
+          <option value='4'>4</option>
+        </select>
 
-      {loadingAppointments
-        ? <p>Loading...</p>
-        : <>
-            {appointments?.map((appointment) => (
-              <div key={appointment._id}>
-                <p>{new Date(appointment.date).toLocaleString()}</p>
-                <p>{appointment.doctor.names}</p>
-                <p>{appointment.doctor.dad_name}</p>
-                <p>{appointment.doctor.cmp}</p>
-              </div>
-            ))}
-          </>
-      }
-    </main>
+        <label>Page</label>
+        {Array.from({ length: filters.totalPages }, (_, index) => (
+          <button
+            key={index}
+            onClick={() => {
+              setFilters({
+                ...filters,
+                page: index + 1
+              })
+            }}
+            style={{ background: filters.page === index + 1 ? 'red' : 'transparent' }}
+          >{index + 1}</button>
+        ))}
+
+        {loadingAppointments
+          ? <p>Loading...</p>
+          : <>
+              {appointments?.map((appointment) => (
+                <div key={appointment._id}>
+                  <p>{new Date(appointment.date).toLocaleString()}</p>
+                  <p>{appointment.doctor.names}</p>
+                  <p>{appointment.doctor.dad_name}</p>
+                  <p>{appointment.doctor.cmp}</p>
+                </div>
+              ))}
+            </>
+        }
+      </main>
+    </>
   )
 }
 
