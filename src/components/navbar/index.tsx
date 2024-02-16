@@ -8,8 +8,8 @@ const Navbar = () => {
   return (
     <nav className='component-navbar'>
       <div className='container'>
-        <Link href={linksInternals.home}>
-          <img src='./images/favicon.ico' alt='logo' />
+        <Link href={linksInternals.landing}>
+          <img src='./images/logo.png' alt='logo' />
         </Link>
       </div>
     </nav>

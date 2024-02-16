@@ -1,7 +1,7 @@
 @import '../../app/globals.scss';
 
 .component-navbar{
-  background-color: #2e95a5;
+  background-color: $lightCyan;
   height: 85px;
 
   @media #{$media-tablet} {

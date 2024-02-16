@@ -1,12 +1,16 @@
+import { linksInternals } from '@/constants/links'
 import Link from 'next/link'
 
 const Login = () => {
   return (
     <div>
-      <Link href='/'>
+      <Link href={linksInternals.landing}>
+        Landing
+      </Link>
+      <Link href={linksInternals.home}>
         Home
       </Link>
-      <Link href='/register'>
+      <Link href={linksInternals.register}>
         register
       </Link>
 

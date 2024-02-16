@@ -1,6 +1,6 @@
 export const linksInternals = Object.freeze({
-  home: '/',
+  landing: '/',
+  home: '/home',
   login: '/login',
   register: '/register',
-  profile: '/profile'
 })

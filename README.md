@@ -1,6 +1,11 @@
-# dating
+# Dating App
 
 This project was created using next-14
+
+## Deployment
+
+[Link in Vercel](https://dating-maverickchampi.vercel.app/)
+
 
 ## How to Use
 
